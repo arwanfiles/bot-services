@@ -1,0 +1,16 @@
+{
+  "name": "arwanfiles-bot-manager",
+  "version": "1.0.0",
+  "description": "Express app to display admin panel for managing bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "admin",
+    "express"
+  ],
+  "author": "Arwani <arwanfiles@gmail.com>",
+  "license": "ISC"
+}

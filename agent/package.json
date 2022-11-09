@@ -1,0 +1,16 @@
+{
+  "name": "arwanfiles-bot-agent",
+  "version": "1.0.0",
+  "description": "Whatsapp agent for listen and send message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "agent",
+    "bot"
+  ],
+  "author": "Arwani <arwanfiles@gmail.com>",
+  "license": "ISC"
+}
