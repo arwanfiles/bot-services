@@ -1,12 +1,23 @@
-const response = (res, statusCode = 200, success = false, message = '', data = {}) => {
-    res.status(statusCode)
-    res.json({
+const response = (res, statusCode = 200, success = false, message = '', data = null) => {
+    res.status(statusCode);
+
+    const json = {
         success,
-        message,
-        data,
-    });
+        message
+    };
+    if (data !== null) json.data = data;
+
+    res.json(json);
 
     res.end();
-}
+};
 
-export default response;
+const success = (res, message = '', data = null, code = 200) => {
+    return response(res, code, true, message, data);
+};
+
+const error = (res, message = '', data = null, code = 500) => {
+    return response(res, code, false, message, data);
+};
+
+export default { success, error };
