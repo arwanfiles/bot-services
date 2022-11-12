@@ -2,9 +2,11 @@
   "name": "arwanfiles-bot-manager",
   "version": "1.0.0",
   "description": "Express app to display admin panel for managing bot",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon .",
+    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=dist/bundle.cjs"
   },
   "keywords": [
     "bot",
@@ -12,5 +14,21 @@
     "express"
   ],
   "author": "Arwani <arwanfiles@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.15.13",
+    "eslint": "^8.27.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pino": "^8.7.0",
+    "pino-pretty": "^9.1.1"
+  }
 }
