@@ -1,7 +1,6 @@
 import joi from 'joi';
 import { getSession, sendMessage, formatPhone } from '../services/whatsapp.js';
 import response from '../helpers/response.js';
-// import logger from '../services/logger.js';
 
 const send = async (req, res) => {
     // validate body

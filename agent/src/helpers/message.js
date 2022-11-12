@@ -38,7 +38,7 @@ const reformatWhatsappMessage = (m) => {
                 name: message.pushName
             },
             type: messageTypeMap[messageType] ?? 'other',
-            originalType: messageType,
+            original_type: messageType,
             content: restructureMessageContent(messageContent, messageType)
         };
     }
