@@ -5,7 +5,8 @@ import baileys, { useMultiFileAuthState, Browsers, delay } from '@adiwajshing/ba
 import { toDataURL } from 'qrcode';
 import __dirname from '../helpers/dirname.js';
 import response from '../helpers/response.js';
-import logger, { stream } from './logger.js';
+import logger, { logStream } from './logger.js';
+import reformatWhatsappMessage from '../helpers/message.js';
 
 const states = ['connecting', 'connected', 'disconnecting', 'disconnected'];
 
@@ -23,7 +24,7 @@ const getSession = (id) => {
 
 const createSession = async (id, res = null) => {
     const sessionFile = `md_${id}`;
-    const log = pino({ level: process.env.WHATSAPP_DEBUG_LEVEL || 'info' }, stream);
+    const log = pino({ level: process.env.WHATSAPP_DEBUG_LEVEL || 'info' }, logStream);
 
     const { state, saveCreds } = await useMultiFileAuthState(sessionsDir(sessionFile));
 
@@ -39,6 +40,19 @@ const createSession = async (id, res = null) => {
     sessions.set(id, { ...sock });
 
     sock.ev.on('creds.update', saveCreds);
+
+    sock.ev.on('messages.upsert', async (m) => {
+        const result = reformatWhatsappMessage(m);
+        if (result) {
+            await delay(1000);
+            const body = {
+                session_id: id,
+                message: result
+            };
+            logger.debug(body, 'New message received, sending to processor webhook...');
+            logger.info(`New message received from ${result.from.id}, sending to processor webhook...`);
+        }
+    });
 
     sock.ev.on('connection.update', async (update) => {
         if (update.qr) {

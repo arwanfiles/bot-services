@@ -1,7 +1,7 @@
 import pino from 'pino';
 import pretty from 'pino-pretty';
 
-export const stream = pretty({
+export const logStream = pretty({
     colorize: true,
     translateTime: 'yyyy-mm-dd HH:MM:ss',
     singleLine: true,
@@ -10,6 +10,6 @@ export const stream = pretty({
 
 const logger = pino({
     level: process.env.APP_DEBUG_LEVEL ?? 'info'
-}, stream);
+}, logStream);
 
 export default logger;
