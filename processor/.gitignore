@@ -1,4 +1,4 @@
-/sessions
+/config
 /node_modules
 /dist
 .env
