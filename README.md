@@ -11,7 +11,6 @@ Service to process input from agent by text pattern
 UI to monitor each service
 
 # Todo
-|--------------------|----------------|----------------------------------------------------------------------------------|
 |Status              |Service         |Feature                                                                           |
 |--------------------|----------------|----------------------------------------------------------------------------------|
 |:white_check_mark:  |Agent           |Create Restful API to create whatsapp session                                     |
