@@ -10,15 +10,17 @@ Service to process input from agent by text pattern
 ## :computer: Manager
 UI to monitor each service
 
-# Plan
-
-:white_check_mark: [Agent] Create Restful API to create whatsapp session
-:white_check_mark: [Agent] Create Restful API to show session list
-:white_check_mark: [Agent] Create Restful API to delete session
-:white_check_mark: [Agent] Create Restful API to send message
-:white_large_square: [Processor] Create json config for question and answer
-:white_large_square: [Processor] Create message processor to read input from agent and show output base on config
-:white_large_square: [Processor] Create queue message
-:white_large_square: [Manager] Create express skeleton app
-:white_large_square: [Manager] Create dashboard menu to show all agent session
-:white_large_square: [Manager] Create dashboard for bot builder
+# Todo
+|--------------------|----------------|----------------------------------------------------------------------------------|
+|Status              |Service         |Feature                                                                           |
+|--------------------|----------------|----------------------------------------------------------------------------------|
+|:white_check_mark:  |Agent           |Create Restful API to create whatsapp session                                     |
+|:white_check_mark:  |Agent           |Create Restful API to show session list                                           |
+|:white_check_mark:  |Agent           |Create Restful API to delete session                                              |
+|:white_check_mark:  |Agent           |Create Restful API to send message                                                |
+|:white_large_square:|Processor       |Create json config for question and answer                                        |
+|:white_large_square:|Processor       |Create message processor to read input from agent and show output base on config  |
+|:white_large_square:|Processor       |Create queue message                                                              |
+|:white_large_square:|Manager         |Create express skeleton app                                                       |
+|:white_large_square:|Manager         |Create dashboard menu to show all agent session                                   |
+|:white_large_square:|Manager         |Create dashboard for bot builder                                                  |
